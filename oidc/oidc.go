@@ -367,6 +367,7 @@ type userInfoRaw struct {
 
 // Claims unmarshals the raw JSON object claims into the provided object.
 func (u *UserInfo) Claims(v interface{}) error {
+	fmt.Println("claims:", string(u.claims))
 	if u.claims == nil {
 		return errors.New("oidc: claims not set")
 	}
